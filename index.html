@@ -208,14 +208,14 @@
   header .logo{animation:entrarLogo .6s ease both;}
 
   .hero-eyebrow,.hero h1,.hero p,.hero-ctas{
-    opacity:0;animation:subirDesvanecer .8s ease forwards;
+    animation:subirDesvanecer .8s ease both;
   }
   .hero-eyebrow{animation-delay:.05s;}
   .hero h1{animation-delay:.18s;}
   .hero p{animation-delay:.32s;}
   .hero-ctas{animation-delay:.46s;}
   .hero-figura{
-    opacity:0;animation:subirDesvanecer 1s ease forwards;animation-delay:.3s;
+    animation:subirDesvanecer 1s ease both;animation-delay:.3s;
   }
   .selo{animation:flutuar 4.5s ease-in-out infinite;animation-delay:1.4s;}
 
@@ -238,8 +238,8 @@
   .valor:hover .valor-icone{animation:flutuar 1.2s ease-in-out infinite;}
 
   /* ===== Bolinhas de feltro ambiente (hero) ===== */
-  .hero{position:relative;}
-  .feltros{position:absolute;inset:-2rem -2rem auto auto;width:100%;height:100%;pointer-events:none;z-index:0;overflow:visible;}
+  .hero-wrap{position:relative;}
+  .feltros{position:absolute;inset:0;pointer-events:none;z-index:0;overflow:visible;}
   .feltros span{
     position:absolute;border-radius:50%;
     box-shadow:inset -4px -5px 10px rgba(74,59,52,.14);
@@ -256,7 +256,7 @@
     33%{transform:translateY(-16px) translateX(6px) rotate(8deg);}
     66%{transform:translateY(8px) translateX(-8px) rotate(-6deg);}
   }
-  .hero > div, .hero-figura{position:relative;z-index:1;}
+  .hero{position:relative;z-index:1;}
 </style>
 </head>
 <body>
@@ -276,10 +276,11 @@
   </div>
 </header>
 
-<section id="inicio" class="hero">
+<div class="hero-wrap">
   <div class="feltros" aria-hidden="true">
     <span></span><span></span><span></span><span></span><span></span><span></span>
   </div>
+  <section id="inicio" class="hero">
   <div>
     <div class="hero-eyebrow">Feito à mão, ponto a ponto</div>
     <h1>Cada bebê merece um <em>quarto</em> com a sua própria história</h1>
@@ -295,7 +296,8 @@
     </div>
     <div class="selo">100%<br>Artesanal</div>
   </div>
-</section>
+  </section>
+</div>
 
 <div class="costura">
   <svg width="22" height="14" viewBox="0 0 22 14"><path d="M2 7c3-6 6-6 9 0s6 6 9 0" stroke="#C97B84" stroke-width="2" fill="none" stroke-linecap="round"/></svg>
